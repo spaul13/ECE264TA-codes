@@ -1,0 +1,57 @@
+\newpage
+\section{Data Types}
+
+Consider the following program that reads an input file as integers
+or floating point numbers.
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+  \lstinputlisting{\basepath/q5/q5.c}
+\end{tt}
+\nolinenumbers
+
+This is the input file:
+
+\begin{tt}
+  \lstinputlisting{\basepath/q5/q5.txt}
+\end{tt}
+
+The following table shows bytes of this input file.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|l| l|l|l|l|l| l|l|l|l|l| l|} \hline
+{\bf Byte}            & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12
+& 13 & 14 \\
+
+{\bf Character}       & 2 &   & 6 & 4 &   & 2 & 0 & . & 1 & 1 & & 9 & & 1 & 7 \\
+
+{\bf ASCII (decimal)} & 50 & 32 & 54 & 52 & 32 & 50 & 48 &
+46 & 49 & 49 & 32 & 57 & 32 & 49 & 55  \\ \hline
+\end{tabular}
+\end{table}
+
+\vspace{0.2in}
+
+Suppose you run the program with the above input file. Please write down the program's output from the five print statements.
+{\bf Your answers should be ONLY the numbers.}
+
+\ifexam
+
+
+\else
+
+
+{\bf Answer:}
+
+3
+
+20
+
+5
+
+17
+
+24
+
+\fi

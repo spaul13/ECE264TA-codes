@@ -1,0 +1,53 @@
+\newpage
+\section{Bitwise Operation (20 pts)} 
+
+Consider the following program for bitwise operation.
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+	\lstinputlisting{\basepath/q3/q3.c}
+\end{tt}
+\nolinenumbers
+
+The {\tt findOdd} function takes an integer array as input. In the input array, there is one element that occurs odd times, while all other elements occur even times. The {\tt findOdd} function returns the only element that occurs odd times.
+\\
+~\\
+The {\tt checkEven} function takes an integer as input and checks if the integer is an even number.
+\\
+~\\
+Hint: the output of the given code is
+
+\begin{tt}
+<--- ANSWER C: [ANSWER C] --->\\
+121 is an odd number.
+\end{tt}
+\\
+~\\
+{\bf ANSWER A: (8 pts)} Fill in the code in line 11. 
+
+(Hint 1: Think about a case where every number appears in the array exactly two times, except for the number you want, which appears exactly once.)
+
+(Hint 2: Suppose the number you're looking for has a 1 as its seventh bit. What can you say about how many times the seventh bit will be 1 across all the numbers in the array? Suppose the number you're looking for has a 0 as its sixth bit. What can you say about how many times the sixth bit will be 1 across all the numbers in the array?)
+\\
+~\\
+{\bf ANSWER B: (8 pts)} Fill in the code in line 19. For full credit, your answer should only use bitwise operations.
+\\
+~\\
+{\bf ANSWER C: (4 pts)} What does line 30 print? Assume the code works. Your answer should only contain a hexadecimal number.
+
+\ifexam
+
+
+\else
+
+
+{\bf Answer:}
+
+Answer A: value \^{} arr[i]
+
+Answer B: \& 1
+
+Answer C: 79
+
+\fi

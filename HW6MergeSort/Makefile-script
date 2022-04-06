@@ -1,0 +1,61 @@
+CFLAGS = -std=c99 -g -Wall -Wshadow --pedantic -Wvla -Werror
+SORTTESTS = -DOMIT_MSORT -DOMIT_MERGE
+SORTTESTSKEY = -DOMIT_MSORT_KEY -DOMIT_MERGE_KEY
+MSORTFILES = msort.c msort_key.c
+SORTTESTS = -DTEST_SORTID -DTEST_SORTFIRSTNAME -DTEST_SORTLASTNAME
+GCC = gcc $(CFLAGS)
+OBJS =  pa05.o student.o
+VALGRIND = valgrind --tool=memcheck --leak-check=yes --verbose
+
+test-stu:
+	./pa06-stu main_inputs/testinput1 id1 first1 last1 > /dev/null
+	./pa06-stu main_inputs/testinput2 id2 first2 last2 > /dev/null
+	./pa06-stu main_inputs/testinput3 id3 first3 last3 > /dev/null
+
+test-msort:
+	./pa06-msort main_inputs/testinput1 id1 first1 last1 > /dev/null
+	./pa06-msort main_inputs/testinput2 id2 first2 last2 > /dev/null
+	./pa06-msort main_inputs/testinput3 id3 first3 last3 > /dev/null
+
+
+test-merge:
+	./pa06-merge main_inputs/testinput1 id1 first1 last1 > /dev/null
+	./pa06-merge main_inputs/testinput2 id2 first2 last2 > /dev/null
+	./pa06-merge main_inputs/testinput3 id3 first3 last3 > /dev/null
+
+pa06-stu: msort.o pa06_stu.o student_stu.o
+	$(GCC) msort.o pa06_stu.o student.o -o pa06-stu
+
+pa06-stu-of : msort.o pa06.o student.o
+	$(GCC) msort.o pa06.o student.o -o pa06-stu
+
+pa06-stu-check-unreachable : msort.o pa06.o student.o
+	$(GCC) -Wunreachable-code msort.o pa06.o student.o -o pa06-stu
+
+pa06-msort: student_msort.o pa06.o student.o
+	$(GCC) student_msort.o pa06.o student.o -o pa06-msort
+
+pa06-merge: student_merge.o pa06.o student.o
+	$(GCC) student_merge.o pa06.o student.o -o pa06-merge
+
+pa06_stu.o: pa06.c
+	$(GCC) $^ -c pa06.c -o pa06_stu.o
+
+student_stu.o : student.c
+	$(GCC) --combine $(SORTTESTS) student.c -c -o student_stu.o 
+
+msort.o: msort.c
+	$(GCC) msort.c -c
+
+student_merge.o: msort.c msort_key.c
+	$(GCC) --combine $(MSORTFILES) -DOMIT_MSORT -DOMIT_MERGE_KEY -c -o student_merge.o
+
+student_msort.o: msort.c msort_key.c
+	$(GCC) --combine $(MSORTFILES) -DOMIT_MERGE -DOMIT_MSORT_KEY -c -o student_msort.o
+
+clean:
+	/bin/rm -f *.o
+	cp object_files/*.o .
+	/bin/rm -f *.gcda *.gcno gmon.out *gcov
+	/bin/rm -f pa06 pa06.prof
+	/bin/rm -f id? first? last? log?

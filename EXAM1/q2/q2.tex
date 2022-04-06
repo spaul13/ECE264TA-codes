@@ -1,0 +1,68 @@
+\newpage
+\section{Structures} 
+
+Consider the following structure definitions:
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+  \lstinputlisting{\basepath/q2/q2.c}
+\end{tt}
+\nolinenumbers
+
+\vspace{0.2in}
+
+{\bf ANSWER A:} 
+
+Assume you have a structure variable {\tt var}:
+
+\begin{tt}
+C var;
+\end{tt}
+
+How would you allocate space for the {\tt y} field of {\tt var}? Your answer should be one line of C code.
+
+\vspace{0.2in}
+
+{\bf ANSWER B:}
+
+Assume that all of the fields of {\tt var} are correctly allocated and initialized.
+
+Which of these statements makes the 3rd element of the second field of the {\tt z} field of {\tt var} equal to 7? Your answer should be the number of the correct statement from the list below.
+
+\begin{enumerate}
+\item {\tt var.z.s[3] = 7;}
+\item {\tt var.z->s[2] = 7;}
+\item {\tt var->z.s[3] = 7;}
+\item {\tt var->z.s[2] = 7;}
+\item {\tt var.z.s[2] = 7;}
+\item {\tt var.z->s[3] = 7;}
+\end{enumerate}
+
+
+\vspace{0.2in}
+
+\ifexam
+
+
+\else
+
+
+{\bf Answer:}
+
+{\bf ANSWER A}: 
+Acceptable answers:
+
+var.y = malloc(sizeof(A))
+
+var.y = (A *) malloc(sizeof(A))
+
+var.y = malloc(sizeof(* var.y))
+
+var.y = (A *) malloc(sizeof(* var.y))
+
+{\bf ANSWER B}:
+
+{\tt var.z->s[2] = 7;}
+
+\fi

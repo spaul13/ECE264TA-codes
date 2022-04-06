@@ -1,0 +1,111 @@
+\newpage
+\section{Binary Tree (30 pts)} 
+
+Consider a binary tree whose post-order description is
+
+H  D  E  B  I  J  F  G  C  A
+
+The in-order description is
+
+D  H  B  E  A  I  F  J  C  G
+
+Please write down the pre-order descripition of the binary tree
+and answer these questions.
+\\
+~\\
+{\bf ANSWER A: (4 pts)} What is the root of the tree?
+\\
+~\\
+{\bf ANSWER B: (6 pts)} What is the right child of the root of the tree?
+Your answer should be a letter between A and H.
+\\
+~\\
+{\bf ANSWER C: (6 pts)} What is the left child of the root of the tree?
+Your answer should be a letter between A and H.
+\\
+~\\
+{\bf ANSWER D: (7 pts)} If a tree has the same in-order description and
+post-order description, how large can this tree be (measured by the
+number of nodes)?  Please choose one correct answer. Your answer
+should be a number 1, or 2, or 3 ... or 9.
+
+\begin{enumerate}
+\item 0 node
+\item 1 node
+\item 2 nodes
+\item 3 nodes
+\item 4 nodes
+\item 7 nodes
+\item 8 nodes
+\item There is no limit
+\item None of the above
+\end{enumerate}
+
+{\bf ANSWER E: (7 pts)} If a tree has the same pre-order description and
+post-order description, how large can this tree be (measured by the
+number of nodes)?  Please choose one correct answer. Your answer
+should be a number 1, or 2, or 3 ... or 9.
+
+\begin{enumerate}
+\item 0 node
+\item 1 node
+\item 2 nodes
+\item 3 nodes
+\item 4 nodes
+\item 7 nodes
+\item 8 nodes
+\item There is no limit
+\item None of the above
+\end{enumerate}
+
+For your reference, the methods for generating the three descriptions
+of a binary tree are shown below.  {\tt Node} is the data type for a
+tree node.
+
+\begin{verbatim}
+void preorder(Node * tn)
+{
+    if (tn == NULL) { return; }
+    print (tn -> data);
+    preorder(tn -> left);
+    preorder(tn -> right);
+}
+
+void inorder(Node * tn)
+{
+    if (tn == NULL) { return; }
+    inorder(tn -> left);
+    print (tn -> data);
+    inorder(tn -> right);
+}
+
+void postorder(Node * tn)
+{
+    if (tn == NULL) { return; }
+    postorder(tn -> left);
+    postorder(tn -> right);
+    print (tn -> data);
+}
+\end{verbatim}
+
+
+\ifexam
+
+
+\else
+
+
+{\bf Answer:}
+
+ANSWER A: A
+
+Answer B: C
+
+Answer C: B
+
+Answer D: 8 (no limit)
+
+Answer E: 2 (1 node)
+
+
+\fi

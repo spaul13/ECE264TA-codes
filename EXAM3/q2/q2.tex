@@ -1,0 +1,58 @@
+\newpage
+\section{Binary Search Tree (25 pts)}
+
+Consider the following definition in \texttt{tree.h}:
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+	\lstinputlisting{\basepath/q2/tree.h}
+\end{tt}
+\nolinenumbers
+
+and the following functions in {\tt tree.c} for binary search tree:
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+	\lstinputlisting{\basepath/q2/q2.c}
+\end{tt}
+\nolinenumbers
+
+There is a bug in {\tt tree\_insert} function, such that it cannot handle duplicate values properly. Do NOT fix the bug.
+
+We use the given {\tt tree\_insert} function to insert nodes 5, 3, 5, 2, 4, 6, 3, 3, 5, 2 (in this order) to an empty binary search tree. Answer questions A and B.
+\\
+~\\
+{\bf ANSWER A: (5 pts)} What is the \underline{last} number in the pre-order traversal? Your answer should only contain an integer.
+\\
+~\\
+{\bf ANSWER B: (5 pts)} What is the \underline{fourth} number in the post-order traversal? Your answer should only contain an integer.
+\\
+~\\
+After the above insert operations, we then use the given {\tt tree\_delete} function to delete nodes 5, 3, 1 (in this order). Answer questions C and D.
+\\
+~\\
+{\bf ANSWER C: (7 pts)} What is the \underline{first} number in the pre-order traversal? Your answer should only contain an integer.
+\\
+~\\
+{\bf ANSWER D: (8 pts)} What is the \underline{fourth} number in the post-order traversal? Your answer should only contain an integer.
+
+\ifexam
+
+
+\else
+
+
+{\bf Answer:}
+
+Answer A: 5
+
+Answer B: 3
+
+Answer C: 4
+
+Answer D: 2
+
+
+\fi

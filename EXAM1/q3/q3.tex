@@ -1,0 +1,62 @@
+\newpage
+
+\section{Makefile}
+
+Consider the following {\tt Makefile} and answer the questions A - D.
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+	\lstinputlisting{\basepath/q3/Makefile}
+\end{tt}
+\nolinenumbers
+
+\vspace{0.2in}
+
+{\bf ANSWER A:} Write down the value of {\tt OBJS}.
+
+\vspace{0.2in}
+
+{\bf ANSWER B:} Fix the command at line 15. Your answer should be what needs to go in {\tt [ANSWER B]}
+
+\vspace{0.2in}
+
+{\bf ANSWER C:} Using the given {\tt Makefile}, what is the Unix command to test with all test cases (input1, input2, input3)? Your answer should be a single command (plus any needed arguments) you can type at the command line.
+
+\vspace{0.2in}
+
+{\bf ANSWER D:} Suppose we have the following in {\tt compare.c}:
+
+\begin{tt}
+	\lstinputlisting{\basepath/q3/q3.c}
+\end{tt}
+\nolinenumbers
+
+When we use the given {\tt Makefile} to test the program, which function(s) is/are compiled and tested?
+Your answer should be the number of the correct response.
+\begin{enumerate}
+\item {\tt func1}
+\item {\tt func2}
+\item Both {\tt func1} and {\tt func2}
+\item None of them
+\end{enumerate}
+
+
+\vspace{0.2in}
+
+\ifexam
+
+\else
+
+{\bf Answer:}
+
+
+\begin{verbatim}
+A: add.o compare.o main.o
+B: -o
+C: make testall
+D: func1
+\end{verbatim}
+
+\fi
+

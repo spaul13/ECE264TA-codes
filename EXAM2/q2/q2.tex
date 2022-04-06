@@ -1,0 +1,45 @@
+\newpage
+\section{Merge Sort} 
+
+Consider the following program for  merge sort.
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+  \lstinputlisting{\basepath/q2/q2.c}
+\end{tt}
+\nolinenumbers
+
+The {\tt mergeSort} function is caleld three times
+using arrays of sizes 2, 4, and 8.  This question asks
+you how many times {\tt mergeSort} and {\tt merge} are called.
+
+This is the program's output:
+
+\begin{verbatim}
+sortcount= <<ANSWER A>>, mergecount=<<ANSWER B>>
+sortcount= XXX, mergecount=XXX
+sortcount= <<ANSWER C>>, mergecount= <<ANSWER D>>
+\end{verbatim}
+
+What are the answers marked as {\tt A} - {\tt D}?
+Do not worry about {\tt XXX}
+
+
+This is {\tt <<ANSWER E>>}: 
+If the input array is already sorted in the ascending order, will
+the answer for {\tt C} change? Please answer {\bf YES}
+if the answer for {\tt C} changes.
+Please answer {\bf NO}
+if the answer for {\tt C} does not chang. 
+
+
+\ifexam
+
+
+\else
+
+
+{\bf Answer:}
+A: 3, B: 1, C: 15, D: 7, No
+\fi

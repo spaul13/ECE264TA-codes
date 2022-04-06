@@ -1,0 +1,19 @@
+CFLAGS = -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror
+GCC = gcc $(CFLAGS)
+INST_OBJS =  inst_maze.o inst_path.o inst_pa08.o inst_mazehelper.o solver.o
+STU_OBJS =  maze.o path.o inst_pa08.o solver.o
+
+
+inst_pa08: $(INST_OBJS) 
+	$(GCC) $(INST_OBJS) -o inst_pa08
+
+stu_pa08: $(INST_OBJS) 
+	$(GCC) $(INST_OBJS) -o stu_pa08
+
+.c.o:
+	$(GCC) -c $*.c
+clean:
+	/bin/rm -f *.o
+	/bin/rm -f *_out
+	/bin/rm -f inst_pa08 stu_pa08
+	/bin/rm -f log1

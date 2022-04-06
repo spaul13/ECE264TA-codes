@@ -1,0 +1,68 @@
+\newpage
+\section{Memory Leak}
+
+Consider the following function:
+
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+  \lstinputlisting{\basepath/q4/q4.c}
+\end{tt}
+\nolinenumbers
+
+
+Suppose the executable program is named {\tt q4prog}.
+
+We run the program with
+
+\begin{verbatim}
+	./q4prog ece 264 midterm1
+\end{verbatim}
+
+Answer the questions A - C.
+
+\vspace{0.2in}
+
+Hint: The output of the program will be
+
+\begin{verbatim}
+	ece
+	264
+	midterm1
+\end{verbatim} 
+
+\vspace{0.2in}
+
+{\bf ANSWER A:} Fix the code at line 32 to properly release memory. Your answer should the expression that is the argument to {\tt free}.
+
+\vspace{0.2in}
+
+{\bf ANSWER B:} If we do not release memory at line 32, how
+many bytes of memory will be leaked?
+
+\vspace{0.2in}
+
+{\bf ANSWER C:} If we do not release memory at line 29, but we
+\emph{do} release the memory at line 32, how many bytes of memory will
+be leaked?
+
+
+\vspace{0.2in}
+
+\ifexam
+
+
+\else
+
+
+{\bf Answer:}
+
+
+\begin{verbatim}
+A: arr
+B: 24
+C: 17
+\end{verbatim}
+
+\fi

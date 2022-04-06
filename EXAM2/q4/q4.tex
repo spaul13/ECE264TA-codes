@@ -1,0 +1,75 @@
+\newpage
+\section{Recursive Function}
+
+Consider the following program.
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+  \lstinputlisting{\basepath/q4/q4.c}
+\end{tt}
+\nolinenumbers
+
+Suppose the executable program is named {\tt recprog}.
+
+Hint: If we run the program with
+\begin{verbatim}
+	./recprog 1
+\end{verbatim}
+the output of the program will be
+\begin{verbatim}
+	Function call
+	func(1) = 1
+\end{verbatim}
+
+{\bf ANSWER A}: Run the program with  
+\begin{verbatim}
+	./recprog 8
+\end{verbatim}
+What is the value of \texttt{func(8)}?
+
+Your answer should only contain an integer, that is 
+\texttt{
+	func(8) = [ANSWER A]
+}
+
+\ifexam
+
+\else
+
+{\bf Answer: 21}
+
+\fi
+
+
+{\bf ANSWER B}: If we run the program with  
+\begin{verbatim}
+	./recprog 5
+\end{verbatim}
+How many lines of {\tt\bf Function call} are there in the output? For example, there is one line of {\tt\bf Function call} in the output if we run the program with \texttt{./recprog 1}. Your answer should only contain an integer.
+
+\ifexam
+
+\else
+
+{\bf Answer: 15}
+
+\fi
+
+
+{\bf ANSWER C}: In general, denote \texttt{g(n)} as the number of lines of {\tt\bf Function call} in the output by running the program with integer \texttt{n}. What is the relation between \texttt{g(n)} and \texttt{g(n-1)} and \texttt{g(n-2)}? Your answer should be the number of the statement below.
+
+\begin{enumerate}
+\item \texttt{g(n) = g(n-1) + g(n-2)}
+\item \texttt{g(n) = g(n-1) + g(n-2) + 1}
+\item \texttt{g(n) = g(n-1) + 1}
+\item \texttt{g(n) = g(n-1) + 2}
+\end{enumerate}
+
+\ifexam
+
+\else
+
+{\bf Answer: 2}
+
+\fi

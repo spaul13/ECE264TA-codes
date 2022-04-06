@@ -1,0 +1,63 @@
+\newpage
+\section{Linked List}
+
+Consider the following definition of two structures in \texttt{list.h}:
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+	\lstinputlisting{\basepath/q5/list.h}
+\end{tt}
+\nolinenumbers
+
+Consider the following program.
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+  \lstinputlisting{\basepath/q5/q5.c}
+\end{tt}
+\nolinenumbers
+
+{\bf ANSWER A}: Fix the code in function \texttt{list\_insert}.
+
+\ifexam
+
+\else
+
+{\bf Answer: Acceptable answers include:}
+\begin{verbatim}
+	list -> tail -> next
+	(list -> tail) -> next
+	(*list).tail -> next
+	((*list).tail) -> next
+\end{verbatim}
+
+\fi
+
+{\bf ANSWER B}: Fix the code in function \texttt{list\_destroy}.
+
+\ifexam
+
+\else
+
+{\bf Answer: list}
+
+\fi
+
+{\bf ANSWER C}: Suppose the executable program is named {\tt listprog}. If we run the program with \texttt{./listprog 10 20 30}, what is the output? Your answer should be the number of the statement below.
+
+\begin{enumerate}
+	\item \texttt{10 20 30}
+	\item \texttt{30 20 10}
+	\item \texttt{10 30 20}
+	\item \texttt{30 10 20}
+\end{enumerate}
+
+\ifexam
+
+\else
+
+{\bf Answer: 1}
+
+\fi

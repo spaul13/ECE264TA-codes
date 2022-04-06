@@ -1,0 +1,142 @@
+\newpage
+\section{Depth First Search}
+
+Here is a portion of depth-first-search code from HW9:
+
+\resetlinenumber[1]
+\linenumbers
+\begin{tt}
+  \lstinputlisting{\basepath/q3/solver.c}
+\end{tt}
+\nolinenumbers
+
+There is a bug in this code (line 35 should happen {\em before} the for loop in line 25).
+\\
+
+{\bf ANSWER A}: Consider the following maze (remember: {\tt\bf \#} is a wall, {\tt\bf .} is an open space, {\tt\bf s} is the start space, and {\tt\bf e} is the end space.
+
+\begin{verbatim}
+#e##
+#.##
+#.##
+s..#
+\end{verbatim}
+
+What will happen when you try to solve this maze? Your answer should be the number of the result below.
+
+\begin{enumerate}
+\item The program will say there is no solution
+\item The program will go into an infinite loop/stack overflow
+\item The program will say the maze is solved with the path {\tt\bf wsss}
+\item The program will solve the maze with the path {\tt\bf ennn}	
+\end{enumerate}
+
+\ifexam
+
+\else
+
+{\bf Answer: 4}
+
+\fi
+
+{\bf ANSWER B}: Consider the following slightly different maze (note that the start position has changed)
+
+\begin{verbatim}
+#e##
+#.##
+#.##
+#..s
+\end{verbatim}
+
+What will happen when you try to solve this maze? Your answer should be the number of the result below.
+
+\begin{enumerate}
+\item The program will say there is no solution
+\item The program will go into an infinite loop/stack overflow
+\item The program will say the maze is solved with the path {\tt\bf wwnnn}
+\item The program will solve the maze with the path {\tt\bf sssee}	
+\end{enumerate}
+
+\ifexam
+
+\else
+
+{\bf Answer: 2}
+
+\fi
+
+{\bf ANSWER C}: Suppose we change lines 17--23 to:
+
+\resetlinenumber[17]
+\linenumbers
+\begin{tt}
+	\lstinputlisting{\basepath/q3/diff.c}
+\end{tt}
+\nolinenumbers
+
+In other words, the new search order is NORTH, SOUTH, WEST, EAST. What happens when we try to solve the maze from part B with the new program? Your answer should be the number of the result below.
+
+\begin{enumerate}
+\item The program will say there is no solution
+\item The program will go into an infinite loop/stack overflow
+\item The program will say the maze is solved with the path {\tt\bf wwnnn}
+\item The program will solve the maze with the path {\tt\bf sssee}	
+\end{enumerate}
+
+\ifexam
+
+\else
+
+{\bf Answer: 3}
+
+\fi
+
+{\bf ANSWER D}: Suppose we fix the {\tt visited} bug (by setting the visited flag before the for loop), but then we replace lines 10--14 with the following:
+
+\resetlinenumber[10]
+\linenumbers
+\begin{tt}
+	\lstinputlisting{\basepath/q3/check.c}
+\end{tt}
+\nolinenumbers
+
+In other words, we forget to check whether the current position is within the maze boundary as part of our base case. Consider the following four mazes. Which of them could result in a segmentation fault when you run the program because the solver goes out of bounds? Your answer should be the number(s) of the maze(s) where the search goes out of bounds. (Assume the search order is as in the original code: NORTH, SOUTH, EAST, WEST)
+
+\begin{enumerate}
+\item 	
+\begin{verbatim}
+#e#
+#.#
+#s#
+\end{verbatim}
+
+\item
+\begin{verbatim}
+####
+...e
+s###	
+\end{verbatim}
+
+\item
+\begin{verbatim}
+####
+e...
+###s	
+\end{verbatim}
+
+\item
+\begin{verbatim}
+.###
+...e
+s###	
+\end{verbatim}
+
+\end{enumerate}
+
+\ifexam
+
+\else
+
+{\bf Answer: 3, 4}
+
+\fi
